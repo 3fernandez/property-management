@@ -23,6 +23,12 @@ class Api::V1::PropertiesController < ApplicationController
     render json: property, status: :ok
   end
 
+  def destroy
+    Events::Property::Destroyed.create(property_id: property_params[:id], payload: property_params)
+
+    render :no_content
+  end
+
   private
     def set_property
       @property = Property.active.find(params[:id])
