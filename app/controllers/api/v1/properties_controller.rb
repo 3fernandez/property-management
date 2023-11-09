@@ -1,4 +1,6 @@
 class Api::V1::PropertiesController < ApplicationController
+  before_action :set_property, only: [:show, :update]
+
   def index
     properties = Property.active
 
@@ -9,5 +11,9 @@ class Api::V1::PropertiesController < ApplicationController
     property = Events::Property::Created.create(payload: property_params)
 
     render json: property, status: :created
+  end
+
+  def show
+    render json: @property
   end
 end

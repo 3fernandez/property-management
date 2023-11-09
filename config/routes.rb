@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       get '/properties', to: 'properties#index'
       post '/properties', to: 'properties#create'
+      get '/properties/:id', to: 'properties#show'
     end
   end
 end
