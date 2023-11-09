@@ -10,11 +10,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      get '/properties', to: 'properties#index'
-      post '/properties', to: 'properties#create'
-      get '/properties/:id', to: 'properties#show'
-      put '/properties/:id', to: 'properties#update'
-      delete '/properties/:id', to: 'properties#destroy'
+      resources :properties, only: %i[index create show update destroy]
     end
   end
 end
