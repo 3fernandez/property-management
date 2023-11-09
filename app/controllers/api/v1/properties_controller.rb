@@ -28,9 +28,9 @@ class Api::V1::PropertiesController < ApplicationController
   end
 
   def destroy
-    Events::Property::Destroyed.create(property_id: property_params[:id], payload: property_params)
+    Events::Property::Destroyed.create(property_id: params[:id], payload: property_params)
 
-    render :no_content
+    head :no_content
   end
 
   private
