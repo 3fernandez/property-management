@@ -16,4 +16,19 @@ class Api::V1::PropertiesController < ApplicationController
   def show
     render json: @property
   end
+
+  def update
+    property = Events::Property::Updated.create(property_id: params[:id], payload: property_params)
+
+    render json: property, status: :ok
+  end
+
+  private
+    def set_property
+      @property = Property.active.find(params[:id])
+    end
+
+    def property_params
+      params.require(:properties).permit(:id, :name, :location, :price, :status)
+    end
 end
