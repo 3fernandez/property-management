@@ -40,3 +40,5 @@ Then, you can issue some API requests like in the following screenshot:
 ```sh
 bundle exec rspec
 ```
+
+#### ** For some solution walk through, head over to [my_approach file](./my_approach.md)
