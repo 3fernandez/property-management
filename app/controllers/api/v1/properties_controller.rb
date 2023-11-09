@@ -10,7 +10,11 @@ class Api::V1::PropertiesController < ApplicationController
   def create
     property = Events::Property::Created.create(payload: property_params)
 
-    render json: property, status: :created
+    if property.property_id.nil?
+      render json: {}, status: :unprocessable_entity
+    else
+      render json: property, status: :created
+    end
   end
 
   def show
