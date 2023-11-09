@@ -34,7 +34,8 @@ Run `bundle install` again on your computer, to ensure that the dependencies are
 After the above steps, the app should be available at your: `localhost:3000`
 
 Then, you can issue some API requests like in the following screenshot:
-<img width="1374" alt="Screenshot 2023-11-09 at 01 16 16" src="https://github.com/3fernandez/property-management/assets/3707769/d5b4b025-0972-4ce1-b7f3-9092e0c469e5">
+<img width="1374" alt="Screenshot 2023-11-09 at 01 16 16" src="https://github.com/3fernandez/property-management/assets/3707769/6cc248ec-f0fe-4412-ae78-d73642e2314a">
+
 
 ### Running the tests:
 ```sh
